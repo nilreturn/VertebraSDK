@@ -1,0 +1,199 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-macos10.15 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Vertebra
+import AppKit
+import Combine
+import CoreGraphics
+import Foundation
+import IOKit
+import Swift
+import SwiftUI
+import SystemConfiguration
+import _Concurrency
+import os.log
+import os
+public struct VCommon : Swift.Codable {
+  public init(serviceName: Swift.String, deployment: Swift.String, svcDomain: Swift.String? = nil, serviceId: Swift.String? = nil, requestTimeStamp: Swift.Int? = nil, accessTimeStamp: Swift.Int? = nil, accessTime: Swift.String? = nil, serviceType: Swift.String? = nil, serviceCode: Swift.String? = nil, serviceCodeId: Swift.String? = nil, serviceCodeGroup: Swift.String? = nil, serviceCodeGroupId: Swift.String? = nil, serviceOrganizationCode: Swift.String? = nil, serviceOrganizationCodeId: Swift.String? = nil, displayName: Swift.String? = nil, kakaoAppKey: Swift.String? = nil, url: Swift.String? = nil, referrer: Swift.String? = nil, clogSeq: Swift.String? = nil, tChannel: Swift.String? = nil, tSrc: Swift.String? = nil, tCh: Swift.String? = nil, tObj: Swift.String? = nil, tMsgId: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VAgent : Swift.Codable {
+  public init(userAgent: Swift.String? = nil, ip: Swift.String? = nil, os: Swift.String? = nil, osVersion: Swift.String? = nil, appVersion: Swift.String? = nil, deviceModel: Swift.String? = nil, deviceNumber: Swift.String? = nil, browser: Swift.String? = nil, browserVersion: Swift.String? = nil, carrier: Swift.String? = nil, networkState: Swift.String? = nil, language: Swift.String? = nil, screen: Swift.String? = nil, timezone: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class VertebraTracker {
+  @objc deinit
+}
+extension Vertebra.VertebraTracker {
+  @discardableResult
+  public static func setRequired(_ configuration: () -> Vertebra.VConfiguration) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func setDevelopment() -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func setProduction() -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func turnOffConsoleLogs() -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func turnOnConsoleLogs() -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func setBatchSize(_ size: Swift.UInt = 5) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func setTimeout(_ value: Foundation.TimeInterval) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ info: () -> Vertebra.VCommon) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ agent: () -> Vertebra.VAgent) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ agreement: () -> Vertebra.VAgreement) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ id: () -> Vertebra.VId) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ free: () -> Swift.String) -> Vertebra.VertebraTracker.Type
+}
+extension Vertebra.VertebraTracker {
+  @discardableResult
+  public static func set(_ bucket: () -> Vertebra.VBucket) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ buckets: () -> [Vertebra.VBucket]) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ click: () -> Vertebra.VClick) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ domain: () -> Vertebra.VDomain) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ location: () -> Vertebra.VLocation) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ page: () -> Vertebra.VPage) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ promotion: () -> Vertebra.VPromotion) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ status: () -> Vertebra.VStatus) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ usage: () -> Vertebra.VUsage) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ utm: () -> Vertebra.VUtm) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ viewImpressionContent: () -> Vertebra.VViewImpressionContent) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ viewImpressionContents: () -> [Vertebra.VViewImpressionContent]) -> Vertebra.VertebraTracker.Type
+  @discardableResult
+  public static func set(_ action: () -> Vertebra.VAction) -> Vertebra.VertebraTracker.Type
+  public static func track(verbose: Swift.Bool = false, disabled: Swift.Bool = false)
+  public static func getData() -> Swift.String
+  public static func flush()
+}
+public struct VViewImpressionContent : Swift.Codable {
+  public init(implementId: Swift.String? = nil, implementType: Swift.String? = nil, implementArea: Swift.String? = nil, id: Swift.String? = nil, type: Swift.String? = nil, name: Swift.String? = nil, category: Swift.String? = nil, provider: Swift.String? = nil, author: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VUsage : Swift.Codable {
+  public init(duration: Swift.Int? = nil, scrollPercent: Swift.Float? = nil, scrollHeight: Swift.Int? = nil, scrollTop: Swift.Int? = nil, scrollInnerHeight: Swift.Int? = nil, scrollBottom: Swift.Int? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VDomain : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct VSearch : Swift.Codable {
+  public init(keyword: Swift.String? = nil, type: Swift.String? = nil, tab: Swift.String? = nil, resultNum: Swift.Int? = nil, collections: Swift.Codable? = nil, tabOrder: [Swift.String]? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VPurchase : Swift.Codable {
+  public init(name: Swift.String? = nil, id: Swift.String? = nil, orderId: Swift.String? = nil, brand: Swift.String? = nil, brandId: Swift.String? = nil, category: Swift.String? = nil, categoryId: Swift.String? = nil, subcategory: Swift.String? = nil, subcategoryId: Swift.String? = nil, seller: Swift.String? = nil, sellerId: Swift.String? = nil, payment: Swift.String? = nil, currency: Swift.String? = nil, shipAmount: Swift.Int? = nil, couponAmount: Swift.Int? = nil, discountAmount: Swift.Int? = nil, feeAmount: Swift.Int? = nil, price: Swift.Float? = nil, quantity: Swift.Int? = nil, totalAmount: Swift.Int? = nil, subscribeYn: Swift.Bool? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VChat : Swift.Codable {
+  public init(utterance: Swift.String? = nil, utteranceTime: Swift.Int? = nil, type: Swift.String? = nil, answered: Swift.String? = nil, id: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VVideoMeeting : Swift.Codable {
+  public init(meetingId: Swift.String? = nil, meetingType: Swift.String? = nil, agentUUID: Swift.String? = nil, micStatus: Swift.String? = nil, micEffect: Swift.String? = nil, micDevice: Swift.String? = nil, cameraStatus: Swift.String? = nil, cameraEffect: Swift.String? = nil, cameraDevice: Swift.String? = nil, pipStatus: Swift.Bool? = nil, pipInfo: Swift.String? = nil, screenShareStatus: Swift.String? = nil, screenShareType: Swift.String? = nil, speechRequest: Swift.String? = nil, reaction: Swift.String? = nil, reactionType: Swift.String? = nil, invitedCount: Swift.Int? = nil, participantsCount: Swift.Int? = nil, utterances: [Swift.String]? = nil, utteranceType: Swift.String? = nil, utteranceDuration: Swift.Int? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VBucket : Swift.Codable {
+  public init(name: Swift.String? = nil, group: Swift.String? = nil, experimentKey: Swift.String? = nil, variationKey: Swift.String? = nil, idType: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VApp : Swift.Codable {
+  public init(appInstall: Swift.Bool? = nil, appUpdate: Swift.Bool? = nil, appLaunch: Swift.Bool? = nil, appExit: Swift.Bool? = nil, appInstallDate: Swift.String? = nil, appInstallTimestamp: Swift.Int? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public enum DeploymentType : Swift.String {
+  case development
+  case production
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct VId : Swift.Codable {
+  public init(accountId: Swift.String? = nil, accessToken: Swift.String? = nil, appUserId: Swift.String? = nil, talkUserId: Swift.String? = nil, daumUserId: Swift.String? = nil, melonId: Swift.String? = nil, appId: Swift.String? = nil, slid: Swift.String? = nil, clid: Swift.String? = nil, uuid: Swift.String? = nil, webId: Swift.String? = nil, webIdEnabled: Swift.Bool? = nil, adid: Swift.String? = nil, adidEnabled: Swift.Bool? = nil, customId: Swift.String? = nil, customGroupId: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VClick : Swift.Codable {
+  public init(type: Swift.String? = nil, layer1: Swift.String? = nil, layer2: Swift.String? = nil, layer3: Swift.String? = nil, clickUrl: Swift.String? = nil, setnum: Swift.String? = nil, ordnum: Swift.String? = nil, copy: Swift.String? = nil, imageUrl: Swift.String? = nil, posX: Swift.Int? = nil, posY: Swift.Int? = nil, impId: Swift.String? = nil, impProvider: Swift.String? = nil, campaignId: Swift.String? = nil, bucketId: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VAction : Swift.Codable {
+  public enum VActionType {
+    case pageView
+    case event
+    case ecommerce
+    case usage
+    case viewImpression
+    case location
+    case app
+    case custom(type: Swift.String)
+  }
+  public init(type: Swift.String, name: Swift.String, kind: Swift.String)
+  public init(type: Vertebra.VAction.VActionType, name: Swift.String, kind: Swift.String)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct VPromotion : Swift.Codable {
+  public init(name: Swift.String? = nil, id: Swift.String? = nil, type: Swift.String? = nil, category: Swift.String? = nil, categoryId: Swift.String? = nil, banner: Swift.String? = nil, bannerId: Swift.String? = nil, bannerUrl: Swift.String? = nil, promotionUrl: Swift.String? = nil, coupon: Swift.String? = nil, couponId: Swift.String? = nil, tags: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VStatus : Swift.Codable {
+  public init(code: Swift.Int? = nil, method: Swift.String? = nil, path: Swift.String? = nil, message: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VUtm : Swift.Codable {
+  public init(type: Swift.String? = nil, utmSource: Swift.String? = nil, utmMedium: Swift.String? = nil, utmCampaign: Swift.String? = nil, utmContent: Swift.String? = nil, utmTerm: Swift.String? = nil, timestamp: Swift.Int? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VPage : Swift.Codable {
+  public init(id: Swift.String? = nil, type: Swift.String? = nil, name: Swift.String? = nil, title: Swift.String? = nil, tab: Swift.String? = nil, tabId: Swift.String? = nil, category: Swift.String? = nil, categoryId: Swift.String? = nil, subcategory: Swift.String? = nil, subcategoryId: Swift.String? = nil, image: Swift.String? = nil, plink: Swift.String? = nil, ecommerceYn: Swift.Bool? = nil, provider: Swift.String? = nil, providerId: Swift.String? = nil, providerType: Swift.String? = nil, tags: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VConfiguration {
+  public init(timeout: Foundation.TimeInterval, batchSize: Swift.UInt = 5)
+  public static func `default`() -> Vertebra.VConfiguration
+}
+public struct VLocation : Swift.Codable {
+  public init(latitude: Swift.Double? = nil, logitude: Swift.Double? = nil, country: Swift.String? = nil, city: Swift.String? = nil, address1: Swift.String? = nil, address2: Swift.String? = nil, zipCode: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct VAgreement : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension Vertebra.DeploymentType : Swift.Equatable {}
+extension Vertebra.DeploymentType : Swift.Hashable {}
+extension Vertebra.DeploymentType : Swift.RawRepresentable {}

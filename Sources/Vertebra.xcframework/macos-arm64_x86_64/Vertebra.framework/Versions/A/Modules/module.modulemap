@@ -1,0 +1,4 @@
+framework module Vertebra {
+  header "Vertebra-Swift.h"
+  requires objc
+}
