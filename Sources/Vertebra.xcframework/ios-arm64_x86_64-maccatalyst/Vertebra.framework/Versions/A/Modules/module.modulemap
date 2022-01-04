@@ -1,0 +1,11 @@
+framework module Vertebra {
+  umbrella header "Vertebra.h"
+
+  export *
+  module * { export * }
+}
+
+module Vertebra.Swift {
+    header "Vertebra-Swift.h"
+    requires objc
+}
